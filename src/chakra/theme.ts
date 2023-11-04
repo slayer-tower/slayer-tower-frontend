@@ -20,6 +20,10 @@ export default extendTheme({
         })
     },
 
+    fonts: {
+        heading: `'Play', sans-serif`
+    },
+
     colors: {
         gray: {
             "50": "#F2F2F2",
