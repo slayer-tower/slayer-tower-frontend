@@ -8,17 +8,19 @@ import { Dispatch, SetStateAction } from 'react';
 
 interface Properties {
 
-    toggleHamburger: Dispatch<SetStateAction<boolean>>;
+    onOpen: Dispatch<SetStateAction<boolean>>;
+
+    onClose: Dispatch<SetStateAction<boolean>>;
 
     toggled: boolean;
 }
 
-const Navigation = ({ toggleHamburger, toggled }: Properties) => {
+const Navigation = ({ onOpen, onClose, toggled }: Properties) => {
 
     return (
         <Flex boxShadow={ '0 0.1rem 1rem rgba(0, 0, 0, 0.3)' } borderBottom={ '0.5px solid rgba(255, 255, 255, 0.1)' } paddingX='2.5rem' paddingY='0.5rem' justifyContent={ 'space-between' } alignItems={ 'center' }>
-            <Box display={ { md: 'none' } }>
-                <Hamburger rounded toggled={ toggled } toggle={ toggleHamburger }/>
+            <Box display={ { lg: 'none' } }>
+                <Hamburger rounded toggled={ toggled } toggle={ toggled ? onClose : onOpen }/>
             </Box>
             <HStack>
                 <Image src={ skull } />
@@ -27,7 +29,7 @@ const Navigation = ({ toggleHamburger, toggled }: Properties) => {
                     <Heading size={ 'md' }>TOWER</Heading>
                 </Stack>
             </HStack>
-            <Button leftIcon={ <AddIcon /> }>
+            <Button leftIcon={ <AddIcon /> } display={ { base: 'none', md: 'block' } }>
                 JOIN EVENT
             </Button>
         </Flex>
