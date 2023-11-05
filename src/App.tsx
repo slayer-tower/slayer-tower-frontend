@@ -1,13 +1,13 @@
 import { ChakraProvider } from '@chakra-ui/react';
 
 import theme from './chakra/theme';
-import Navigation from '@components/Navigation';
+import Layout from './pages/Layout';
 
 const App = () => {
 
     return (
         <ChakraProvider theme={ theme }>
-            <Navigation />
+            <Layout>H</Layout>
         </ChakraProvider>
     );
 }
