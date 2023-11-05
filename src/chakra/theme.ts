@@ -1,15 +1,12 @@
 import { extendTheme } from '@chakra-ui/react';
 
-import type { GlobalStyleProps } from '@chakra-ui/theme-tools';
-
 export default extendTheme({
 
     // General configuration for Chakra UI defaults
     config: {
-        initialColorMode: 'light',
+        initialColorMode: 'dark',
         useSystemColorMode: false,
     },
-
 
     fonts: {
         heading: `'Play', sans-serif`
