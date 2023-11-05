@@ -33,7 +33,7 @@ const useWindowResizeEffect = (onResize: () => void, breakpoint: number = 768, d
 
         return () => window.removeEventListener('resize', handleResize);
 
-    }, [ onResize, breakpoint, delay ]);
+    }, []);
 }
 
 export default useWindowResizeEffect;
