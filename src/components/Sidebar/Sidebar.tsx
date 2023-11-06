@@ -1,16 +1,44 @@
-import { VStack } from '@chakra-ui/react';
+import { Button, VStack } from '@chakra-ui/react';
 
-interface Properties {
-    sidebarIsOpen: boolean
+import { FiHome } from 'react-icons/fi';
+import { HiOutlineViewGridAdd } from 'react-icons/hi';
+
+interface SidebarButtonProperties {
+    text: string
+    icon: React.ReactElement
 }
 
-const Sidebar = ({ sidebarIsOpen }: Properties) => {
+const SLOTS = {
+
+    none: [
+        {
+            text: 'Home',
+            icon: <FiHome />
+        },
+        {
+            text: 'Create Event',
+            icon: <HiOutlineViewGridAdd />
+        }
+    ]
+}
+
+const Sidebar = () => {
 
     return (
-        <VStack height={ 'full' } width={ '20rem' } padding={ '1.5rem' }>
-            <h1>Hello</h1>
+        <VStack height={ 'full' } width={ '15rem' } padding={ '1.5rem' }>
+            { SLOTS.none.map( route => (
+                <SidebarButton text={ route.text } icon={ route.icon } />
+            )) }
         </VStack>
     );
+}
+
+const SidebarButton = ({ text, icon }: SidebarButtonProperties) => {
+    return(
+        <Button leftIcon={ icon } variant={ 'ghost' } width={ 'full' } justifyContent={ 'flex-start' }>
+            { text }
+        </Button>
+    )
 }
 
 export default Sidebar;

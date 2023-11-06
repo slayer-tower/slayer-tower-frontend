@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import { Box, Button, Center, Flex, HStack, Heading, Image, Stack } from '@chakra-ui/react';
-import { AddIcon } from '@chakra-ui/icons';
+import { BsPersonAdd } from 'react-icons/bs';
 
 import { Squash as Hamburger } from 'hamburger-react';
 
@@ -27,7 +27,7 @@ const Navigation = ({ onOpen, onClose, toggled }: Properties) => {
                 </Stack>
             </HStack>
             <HStack>
-                <Button leftIcon={ <AddIcon /> } display={ { base: 'none', md: 'flex' } } >
+                <Button leftIcon={ <BsPersonAdd size={ 25 } /> } display={ { base: 'none', sm: 'flex' } } >
                     JOIN EVENT
                 </Button>
                 <Box display={ { lg: 'none' } }>
