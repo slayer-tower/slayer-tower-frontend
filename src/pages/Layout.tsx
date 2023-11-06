@@ -1,7 +1,7 @@
 import { Box, Center, Container, Drawer, DrawerContent, DrawerOverlay, Flex, HStack, Heading, Image, Stack, useDisclosure } from '@chakra-ui/react'
 
-import Navigation from '@components/Navigation';
-import Sidebar from '@components/Sidebar/Sidebar';
+import Navigation from '@components/navigation/NavigationBar';
+import Sidebar from '@components/navigation/NavigationSidebar';
 import skull from '@assets/images/slayer-skull.png';
 import useWindowResizeEffect from '@hooks/useWindowResizeEffect';
 
@@ -23,7 +23,9 @@ const Layout = ({ children }: Properties) => {
                 <Box display={ { base: 'none', lg: 'block' } } boxShadow={ '0.1rem 0rem 1rem rgba(0, 0, 0, 0.3)' } borderRight={ '0.5px solid rgba(255, 255, 255, 0.1)' } height={ 'full' }>
                     <Sidebar />
                 </Box>
-                <Container height={ 'full' }>{isOpen ? 'open': 'closed'}</Container>
+                <Container height={ 'full' }>
+                    { children }
+                </Container>
             </HStack>
             <Drawer isOpen={ isOpen } onClose={ onClose } placement={ 'left' }>
                 <DrawerOverlay />

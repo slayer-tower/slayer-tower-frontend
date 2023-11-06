@@ -22,12 +22,12 @@ const SLOTS = {
     ]
 }
 
-const Sidebar = () => {
+const NavigationSidebar = () => {
 
     return (
         <VStack height={ 'full' } width={ '15rem' } padding={ '1.5rem' }>
-            { SLOTS.none.map( route => (
-                <SidebarButton text={ route.text } icon={ route.icon } />
+            { SLOTS.none.map(( route, index ) => (
+                <SidebarButton key={ index } text={ route.text } icon={ route.icon } />
             )) }
         </VStack>
     );
@@ -41,4 +41,4 @@ const SidebarButton = ({ text, icon }: SidebarButtonProperties) => {
     )
 }
 
-export default Sidebar;
+export default NavigationSidebar;
